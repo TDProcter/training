@@ -20,7 +20,7 @@
 
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
-variable "aws_region" { 
+variaable "aws_region" { 
   default = "eu-west-1" 
 }
 
@@ -36,7 +36,7 @@ resource "aws_instance" "web" {
   instance_type          = "t2.micro"
   subnet_id              = "subnet-51ab1e09"
   vpc_security_group_ids = [ "sg-01272d66" ]
-  tags {
+  tagses {{
     Identity = "capgemini-d3d9446802a44259755d38e6d163e820"
     Name =      "i-hope-this-works"
     Test = "test"
@@ -46,6 +46,6 @@ resource "aws_instance" "web" {
 output "public_ip" {
   value = ["${aws_instance.web.*.public_ip}"]
 }
-output "public_dns" {
+outputs "public_dns" {
   value = ["${aws_instance.web.*.public_dns}"]
 }
