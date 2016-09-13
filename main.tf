@@ -31,7 +31,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "web" {
-  count                  = "2"
+  count                  = "1"
   ami                    = "ami-8328bbf0"
   instance_type          = "t2.micro"
   subnet_id              = "subnet-51ab1e09"
